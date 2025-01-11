@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Personal Website v3</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Loading Screen -->
+        <section id="loading">
+            <h1>Welcome</h1>
+            <p>Feel free to explore the building and/or use the buttons attached to the top billboard.</p>
+            <p>Note that some of the camera movement may feel weird. I do plan on fixing that.</p>
+        </section>
+
+        <!-- Scene -->
+        <section id="scene">
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.58/build/spline-viewer.js" async></script>
+            <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/JdEyvWTRbyg0n5sn/scene.splinecode"><img src="data:image/png;base64,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" alt="Spline preview" style="width: 100%; height: 100%;"/>
+            </spline-viewer>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>   <!-- links to scripts.js file -->
+</body>
+</html>
