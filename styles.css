@@ -1,0 +1,39 @@
+html {
+  overflow-y: hidden;
+}
+
+body {
+  background-color: rgb(53,56,57);
+}
+
+.container {
+height: 100%;
+}
+
+#loading {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgb(53,56,57);
+  text-align: center;
+  color: white;
+  height: 100%;
+  width: 100%;
+  animation: fadeOut 3s ease 8s 1 forwards;
+}
+
+@keyframes fadeOut
+{
+  from {opacity: 1;}
+  to {opacity: 0; visibility: hidden;}
+}
+
+#scene {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: aqua;
+}
