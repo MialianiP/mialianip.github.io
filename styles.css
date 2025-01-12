@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Tomorrow:wght@500&display=swap');
+
 html {
   overflow-y: hidden;
 }
@@ -6,20 +8,17 @@ body {
   background-color: rgb(53,56,57);
 }
 
-.container {
-height: 100%;
-}
-
 #loading {
   position: absolute;
   left: 0px;
   top: 0px;
-  background-color: rgb(53,56,57);
+  background-color: rgb(42, 52, 57);
   text-align: center;
   color: white;
   height: 100%;
   width: 100%;
-  animation: fadeOut 3s ease 8s 1 forwards;
+  animation: fadeOut 1s ease 10s forwards;
+  /* Shorthand: name, duration, timing-function, delay, direction */
 }
 
 @keyframes fadeOut
@@ -28,12 +27,79 @@ height: 100%;
   to {opacity: 0; visibility: hidden;}
 }
 
+h1 {
+  margin-top: 100px;
+  font-optical-sizing: auto;
+  font: normal 700 3em "Orbitron", serif; 
+  /* Shorthand: style, weight, size/line-height, font-family */
+}
+
+p {
+  font: normal 500 1.5em "Tomorrow", serif; 
+}
+
+h4 {
+  margin-top: 100px;
+  font-optical-sizing: auto;
+  font: normal 700 2em "Orbitron", serif;
+}
+
+/**** loader from CSS Loaders https://css-loaders.com/spinner/ ****/
+#loader {
+  width: 50px;
+  margin: auto;
+  margin-top: -15px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25b09b;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+          mask: var(--_m);
+          mask-composite: subtract;
+  animation: spin 1s linear infinite, disappear 1s linear 5.8s forwards ;
+  /* Shorthand: name, duration, timing-function, iteration count ||| name, duration, timing function, delay, direction */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn)
+  }
+}
+/******************************************************************/
+
+@keyframes disappear {
+  to {
+    display: none;
+  }
+}
+
+.fadeUp {
+  opacity: 0;
+  margin: auto;
+  margin-top: -15px;
+  animation: fadeUp 2s ease 7s forwards;
+  /* Shorthand: name, duration, timing-function, delay, direction */
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
 #scene {
   position: absolute;
   left: 0px;
   top: 0px;
   z-index: -1;
+  background-color: rgb(42, 52, 57);
   height: 100%;
   width: 100%;
-  background-color: aqua;
 }
