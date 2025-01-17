@@ -17,19 +17,16 @@ body {
   color: white;
   height: 100%;
   width: 100%;
-  animation: fadeOut 1s ease 10s forwards;
-  /* Shorthand: name, duration, timing-function, delay, direction */
 }
 
 @keyframes fadeOut
 {
   from {opacity: 1;}
-  to {opacity: 0; visibility: hidden;}
+  to {opacity: 0; display: none;} /* display:none - hides element and removes its space */
 }
 
 h1 {
   margin-top: 100px;
-  font-optical-sizing: auto;
   font: normal 700 3em "Orbitron", serif; 
   /* Shorthand: style, weight, size/line-height, font-family */
 }
@@ -40,7 +37,6 @@ p {
 
 h4 {
   margin-top: 100px;
-  font-optical-sizing: auto;
   font: normal 700 2em "Orbitron", serif;
 }
 
@@ -58,40 +54,90 @@ h4 {
     linear-gradient(#000 0 0) content-box;
           mask: var(--_m);
           mask-composite: subtract;
-  animation: spin 1s linear infinite, disappear 1s linear 5.8s forwards ;
+  animation: spin 1s linear infinite, disappear 1s linear 3s forwards ;
   /* Shorthand: name, duration, timing-function, iteration count ||| name, duration, timing function, delay, direction */
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(1turn)
-  }
+  to {transform: rotate(1turn)}
 }
 /******************************************************************/
 
 @keyframes disappear {
-  to {
-    display: none;
-  }
+  to {display: none;}
 }
 
 .fadeUp {
   opacity: 0;
   margin: auto;
   margin-top: -15px;
-  animation: fadeUp 2s ease 7s forwards;
+  animation: fadeUp 1s ease 4s forwards;
   /* Shorthand: name, duration, timing-function, delay, direction */
 }
 
 @keyframes fadeUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0%);
-    opacity: 1;
-  }
+  from {transform: translateY(100%); opacity: 0;}
+  to {transform: translateY(0%); opacity: 1;}
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  width: 200px;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 163, 0);
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  color: black;
+  margin-top: 50px;
+  padding: 15px 15px;
+  font: normal 600 30px "Orbitron", serif; 
+  width: 100%;
+  opacity: 0;
+}
+
+button:hover {
+  background-color: rgb(0, 204, 0);
+  transition: 0.25s;
+}
+
+button:first-child {
+  animation: glitch 0.8s linear 5s forwards;
+}
+button:nth-child(2) {
+  animation: glitch2 0.5s linear 5s forwards;
+}
+button:last-child {
+  animation: glitch3 1s linear 5s forwards;
+}
+
+@keyframes glitch
+{
+  0% {clip-path: inset(0% 0% 70% 0%); translate: -5px 0px; opacity: 1;}
+  35% {clip-path: inset(0% 0% 70% 0%); translate: -5px 0px; opacity: 1;}
+  36% {clip-path: inset(0% 0% 70% 0%); translate: 0px 0px; opacity: 1;}
+  100% {opacity: 1;}
+}
+
+@keyframes glitch2
+{
+  0% {clip-path: inset(30% 0% 30% 0%); translate: 10px 0px; opacity: 1;}
+  35% {clip-path: inset(30% 0% 30% 0%); translate: 10px 0px; opacity: 1;}
+  36% {clip-path: inset(30% 0% 30% 0%); translate: 0px 0px; opacity: 1;}
+  100% {opacity: 1;}
+}
+
+@keyframes glitch3
+{
+  0% {clip-path: inset(70% 0% 0% 0%); translate: -20px 0px; opacity: 1;}
+  35% {clip-path: inset(70% 0% 0% 0%); translate: -20px 0px; opacity: 1;}
+  36% {clip-path: inset(70% 0% 0% 0%); translate: 0px 0px; opacity: 1;}
+  100% {opacity: 1;}
 }
 
 #scene {
